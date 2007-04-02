@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+    <name>Var_Dump</name>
+    <channel>pear.php.net</channel>
+    <summary>Provides methods for dumping structured information about a variable.</summary>
+    <description>The Var_Dump class is a wrapper for the var_dump function.
+
+The var_dump function displays structured information about expressions that includes its type and value. Arrays are explored recursively with values indented to show structure.
+
+The Var_Dump class captures the output of the var_dump function, by using output control functions, and then uses external renderer classes for displaying the result in various graphical ways :
+* Simple text,
+* HTML/XHTML text,
+* HTML/XHTML table,
+* XML,
+* ...</description>
+    <lead>
+        <name>Poeydomenge Frederic</name>
+        <user>fredericpoeydomenge</user>
+        <email>fpoeydomenge@free.fr</email>
+        <active>yes</active>
+    </lead>
+    <date>2006-02-21</date>
+    <time>12:31:07</time>
+    <version>
+        <release>1.0.3</release>
+        <api>1.0.0</api>
+    </version>
+    <stability>
+        <release>stable</release>
+        <api>stable</api>
+    </stability>
+    <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+    <notes>- Better compliance with XHTML
+- Fixed output of Text renderer (missing htmlspecialchars)
+- Updated examples (serving application/xhtml+xml)
+- New return reference automatically so using &amp; in this context is deprecated
+- Fixed typos in unit tests</notes>
+    <contents>
+        <dir name="/">
+            <file role="php" name="Var_Dump.php" />
+            <file role="php" name="Var_Dump/Renderer.php" />
+            <file role="php" name="Var_Dump/Renderer/Common.php" />
+            <file role="php" name="Var_Dump/Renderer/Text.php" />
+            <file role="php" name="Var_Dump/Renderer/Table.php" />
+            <file role="php" name="Var_Dump/Renderer/HTML4_Table.php" />
+            <file role="php" name="Var_Dump/Renderer/HTML4_Text.php" />
+            <file role="php" name="Var_Dump/Renderer/XHTML_Table.php" />
+            <file role="php" name="Var_Dump/Renderer/XHTML_Text.php" />
+            <file role="php" name="Var_Dump/Renderer/XML.php" />
+            <file role="doc" name="docs/example-1.php" />
+            <file role="doc" name="docs/example-2.php" />
+            <file role="doc" name="docs/example-3.php" />
+            <file role="doc" name="docs/example-4.php" />
+            <file role="doc" name="docs/example-5.php" />
+            <file role="doc" name="docs/example-6.php" />
+            <file role="test" name="tests/bug1321.phpt" />
+            <file role="test" name="tests/bug490.phpt" />
+            <file role="test" name="tests/bug3396.phpt" />
+            <file role="test" name="tests/bug3416.phpt" />
+            <file role="test" name="tests/ignore-list.phpt" />
+            <file role="test" name="tests/renderer-html4_table.phpt" />
+            <file role="test" name="tests/renderer-html4_text.phpt" />
+            <file role="test" name="tests/renderer-table.phpt" />
+            <file role="test" name="tests/renderer-text.phpt" />
+            <file role="test" name="tests/renderer-xhtml_table.phpt" />
+            <file role="test" name="tests/renderer-xhtml_text.phpt" />
+            <file role="test" name="tests/renderer-xml.phpt" />
+            <file role="test" name="tests/text-compact_mode.phpt" />
+            <file role="test" name="tests/text-normal_mode.phpt" />
+            <file role="test" name="tests/text-wide_mode.phpt" />
+            <file role="test" name="tests/toString-array.phpt" />
+            <file role="test" name="tests/toString-bool.phpt" />
+            <file role="test" name="tests/toString-float.phpt" />
+            <file role="test" name="tests/toString-int.phpt" />
+            <file role="test" name="tests/toString-null.phpt" />
+            <file role="test" name="tests/toString-object.phpt" />
+            <file role="test" name="tests/toString-resource.phpt" />
+            <file role="data" name="data/renderer-xml.dtd" />
+            <file role="data" name="data/memory-usage.txt" />
+        </dir>
+    </contents>
+    <dependencies>
+        <required>
+            <php><min>4.0.4</min></php>
+            <pearinstaller><min>1.4.0</min></pearinstaller>
+            <extension><name>pcre</name></extension>
+        </required>
+    </dependencies>
+    <phprelease>
+        <filelist>
+            <install name="Var_Dump.php" as="Var_Dump.php" />
+            <install name="Var_Dump/Renderer.php" as="Var_Dump/Renderer.php" />
+            <install name="Var_Dump/Renderer/Common.php" as="Var_Dump/Renderer/Common.php" />
+            <install name="Var_Dump/Renderer/Text.php" as="Var_Dump/Renderer/Text.php" />
+            <install name="Var_Dump/Renderer/Table.php" as="Var_Dump/Renderer/Table.php" />
+            <install name="Var_Dump/Renderer/HTML4_Table.php" as="Var_Dump/Renderer/HTML4_Table.php" />
+            <install name="Var_Dump/Renderer/HTML4_Text.php" as="Var_Dump/Renderer/HTML4_Text.php" />
+            <install name="Var_Dump/Renderer/XHTML_Table.php" as="Var_Dump/Renderer/XHTML_Table.php" />
+            <install name="Var_Dump/Renderer/XHTML_Text.php" as="Var_Dump/Renderer/XHTML_Text.php" />
+            <install name="Var_Dump/Renderer/XML.php" as="Var_Dump/Renderer/XML.php" />
+            <install name="docs/example-1.php" as="example-1.php" />
+            <install name="docs/example-2.php" as="example-2.php" />
+            <install name="docs/example-3.php" as="example-3.php" />
+            <install name="docs/example-4.php" as="example-4.php" />
+            <install name="docs/example-5.php" as="example-5.php" />
+            <install name="docs/example-6.php" as="example-6.php" />
+            <install name="tests/bug1321.phpt" as="bug1321.phpt" />
+            <install name="tests/bug490.phpt" as="bug490.phpt" />
+            <install name="tests/bug3396.phpt" as="bug3396.phpt" />
+            <install name="tests/bug3416.phpt" as="bug3416.phpt" />
+            <install name="tests/ignore-list.phpt" as="ignore-list.phpt" />
+            <install name="tests/renderer-html4_table.phpt" as="renderer-html4_table.phpt" />
+            <install name="tests/renderer-html4_text.phpt" as="renderer-html4_text.phpt" />
+            <install name="tests/renderer-table.phpt" as="renderer-table.phpt" />
+            <install name="tests/renderer-text.phpt" as="renderer-text.phpt" />
+            <install name="tests/renderer-xhtml_table.phpt" as="renderer-xhtml_table.phpt" />
+            <install name="tests/renderer-xhtml_text.phpt" as="renderer-xhtml_text.phpt" />
+            <install name="tests/renderer-xml.phpt" as="renderer-xml.phpt" />
+            <install name="tests/text-compact_mode.phpt" as="text-compact_mode.phpt" />
+            <install name="tests/text-normal_mode.phpt" as="text-normal_mode.phpt" />
+            <install name="tests/text-wide_mode.phpt" as="text-wide_mode.phpt" />
+            <install name="tests/toString-array.phpt" as="toString-array.phpt" />
+            <install name="tests/toString-bool.phpt" as="toString-bool.phpt" />
+            <install name="tests/toString-float.phpt" as="toString-float.phpt" />
+            <install name="tests/toString-int.phpt" as="toString-int.phpt" />
+            <install name="tests/toString-null.phpt" as="toString-null.phpt" />
+            <install name="tests/toString-object.phpt" as="toString-object.phpt" />
+            <install name="tests/toString-resource.phpt" as="toString-resource.phpt" />
+            <install name="data/renderer-xml.dtd" as="renderer-xml.dtd" />
+            <install name="data/memory-usage.txt" as="memory-usage.txt" />
+        </filelist>
+    </phprelease>
+</package>

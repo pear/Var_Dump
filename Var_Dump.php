@@ -373,30 +373,46 @@ class Var_Dump
                     }
                     break;
 
-                // End of array/object
-                //=====================
+                // String (additional line containing a single "}")
+                //==================================================
+                // - see "case VAR_DUMP_PREG_STRING_COMPL" just above
+                //
+                // OR End of array/object
+                //========================
                 // - Pop the maxLen of the keys off the end of the stack
                 // - If the last element on the stack is an array(0) or object(0),
                 //   replace it by a standard element
 
                 case VAR_DUMP_PREG_ARRAY_END:
-                    $oldLen = array_pop($stackLen);
-                    $keyLen[$oldLen[0]] = $maxLen;
-                    $maxLen = $oldLen[1];
-                    if (
-                        ($family[count($family) - 1] == VAR_DUMP_START_GROUP)
-                            and
-                        ($type[count($type) - 1] === 0)
-                    ) {
-                        $family[count($family) - 1] = VAR_DUMP_FINISH_ELEMENT;
-                        $type[count($type) - 1] = $value[count($value) - 1];
-                        $value[count($value) - 1] = NULL;
+
+                    if ($countdown > 0) {
+                        // String
+                        $countdown -= strlen($match[VAR_DUMP_PREG_MATCH]) + 1;
+                        $new_value = array_pop($value) . "\n" . '}';
+                        if ($countdown == 0) {
+                            $new_value = substr($new_value, 0, -1);
+                        }
+                        array_push($value, $new_value);
                     } else {
-                        $family[] = VAR_DUMP_FINISH_GROUP;
-                        $depth[] = strlen($match[VAR_DUMP_PREG_SPACES]) >> 1;
-                        $type[] = NULL;
-                        $value[] = $match[VAR_DUMP_PREG_ARRAY_END];
-                                        }
+                        // End of array/object
+                        $oldLen = array_pop($stackLen);
+                        $keyLen[$oldLen[0]] = $maxLen;
+                        $maxLen = $oldLen[1];
+                        if (
+                            ($family[count($family) - 1] == VAR_DUMP_START_GROUP)
+                                and
+                            ($type[count($type) - 1] === 0)
+                        ) {
+                            $family[count($family) - 1] = VAR_DUMP_FINISH_ELEMENT;
+                            $type[count($type) - 1] = $value[count($value) - 1];
+                            $value[count($value) - 1] = NULL;
+                        } else {
+                            $family[] = VAR_DUMP_FINISH_GROUP;
+                            $depth[] = strlen($match[VAR_DUMP_PREG_SPACES]) >> 1;
+                            $type[] = NULL;
+                            $value[] = $match[VAR_DUMP_PREG_ARRAY_END];
+                        }
+                    }
                     break;
 
                 // Start of array/object

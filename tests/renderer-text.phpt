@@ -3,7 +3,6 @@ Renderer : Text.
 --FILE--
 <?php
 
-error_reporting(E_ALL);
 require_once 'Var_Dump.php';
 
 $linkedArray = array(TRUE, 123, 123.45);

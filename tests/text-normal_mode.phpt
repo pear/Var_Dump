@@ -3,7 +3,6 @@ Text renderer : Normal mode.
 --FILE--
 <?php
 
-error_reporting(E_ALL);
 require_once 'Var_Dump.php';
 
 $linkedArray = array(0 => 'John', 11 => 'Jack', 127 => 'Bill');

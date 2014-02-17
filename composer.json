@@ -1,0 +1,28 @@
+{
+    "authors": [
+        {
+            "email": "fpoeydomenge@free.fr",
+            "name": "Poeydomenge Frederic",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "description": "More info available on: http://pear.php.net/package/Var_Dump",
+    "license": "PHP License",
+    "name": "pear/var_dump",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Var_Dump",
+        "source": "https://github.com/pear/Var_Dump"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
